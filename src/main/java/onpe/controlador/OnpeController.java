@@ -18,12 +18,12 @@ public class OnpeController {
 		return "index";
 	}
 	
-	@GetMapping({"/actas_numero"})
+	@GetMapping({"/actas/numero"})
 	public String mostrarActas(Model modelo){
 		return "actas_numero";
 	}
 	
-	@GetMapping({"/actas_numero/{idGrupoVotacion}"})
+	@GetMapping({"/actas/numero/{idGrupoVotacion}"})
 	public String mostrarActasPorNumero(@PathVariable String idGrupoVotacion, Model modelo) {
 		modelo.addAttribute("GrupoVotacionServicio", servicio.buscarGrupoVotacionPorNumero(idGrupoVotacion));
 		return "actas_numero";

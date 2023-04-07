@@ -1,56 +1,55 @@
 package onpe.entidad;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "GrupoVotacion", catalog = "Onpe", schema = "")
 public class GrupoVotacion {
 	
 	@Id
-	@Column
 	private Integer idGrupoVotacion;
-	
-	@Column
 	private int idLocalVotacion;
-	
-	@Column
 	private String nCopia;
-	
-	@Column
 	private int idEstadoActa;
-	
-	@Column
 	private int ElectoresHabiles;
-	
-	@Column
 	private int TotalVotantes;
-	
-	@Column
 	private int P1;
-	
-	@Column 
 	private int P2;
-	
-	@Column
 	private int VotosBlancos;
-	
-	@Column
 	private int VotosNulos;
-	
-	@Column
 	private int VotosImpugnados;
-
 	private String Departamento;
 	private String Provincia;
 	private String Distrito;
 	private String RazonSocial;
 	private String Direccion;
-	
-	
-	
+
+	public GrupoVotacion(Integer idGrupoVotacion, int idLocalVotacion, String nCopia, int idEstadoActa,
+			int electoresHabiles, int totalVotantes, int p1, int p2, int votosBlancos, int votosNulos,
+			int votosImpugnados, String departamento, String provincia, String distrito, String razonSocial,
+			String direccion) {
+		this.idGrupoVotacion = idGrupoVotacion;
+		this.idLocalVotacion = idLocalVotacion;
+		this.nCopia = nCopia;
+		this.idEstadoActa = idEstadoActa;
+		ElectoresHabiles = electoresHabiles;
+		TotalVotantes = totalVotantes;
+		P1 = p1;
+		P2 = p2;
+		VotosBlancos = votosBlancos;
+		VotosNulos = votosNulos;
+		VotosImpugnados = votosImpugnados;
+		Departamento = departamento;
+		Provincia = provincia;
+		Distrito = distrito;
+		RazonSocial = razonSocial;
+		Direccion = direccion;
+	}
+
+	public GrupoVotacion() {
+		
+	}
+
 	public Integer getIdGrupoVotacion() {
 		return idGrupoVotacion;
 	}
@@ -79,8 +78,8 @@ public class GrupoVotacion {
 		return idEstadoActa;
 	}
 
-	public void setIdEstado(int idEstado) {
-		this.idEstadoActa = idEstado;
+	public void setIdEstadoActa(int idEstadoActa) {
+		this.idEstadoActa = idEstadoActa;
 	}
 
 	public int getElectoresHabiles() {
@@ -178,22 +177,4 @@ public class GrupoVotacion {
 	public void setDireccion(String direccion) {
 		Direccion = direccion;
 	}
-
-	public GrupoVotacion() {
-		
-	}
-
-	public GrupoVotacion(Integer idGrupoVotacion, int idLocalVotacion, String nCopia, int idEstadoActa, int electoresHabiles, int totalVotantes, int p1, int p2, int votosBlancos, int votosNulos, int votosImpugnados) {
-		this.idGrupoVotacion = idGrupoVotacion;
-		this.idLocalVotacion = idLocalVotacion;
-		this.nCopia = nCopia;
-		this.idEstadoActa = idEstadoActa;
-		ElectoresHabiles = electoresHabiles;
-		TotalVotantes = totalVotantes;
-		P1 = p1;
-		P2 = p2;
-		VotosBlancos = votosBlancos;
-		VotosNulos = votosNulos;
-		VotosImpugnados = votosImpugnados;
-	}	
 }
