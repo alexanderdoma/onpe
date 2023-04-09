@@ -26,6 +26,6 @@ public class OnpeController {
 	@GetMapping({"/actas/numero/{idGrupoVotacion}"})
 	public String mostrarActasPorNumero(@PathVariable String idGrupoVotacion, Model modelo) {
 		modelo.addAttribute("GrupoVotacionServicio", servicio.buscarGrupoVotacionPorNumero(idGrupoVotacion));
-		return "actas_numero";
+		return "response";
 	}
 }
