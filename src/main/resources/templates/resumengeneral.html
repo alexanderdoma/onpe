@@ -107,15 +107,15 @@
                                                     class="spaceimg">PERUANOS POR EL KAMBIO
                                             </td>
                                             <td th:text="${ResumenGeneral.p1}"></td>
-                                            <td th:text="${ResumenGeneral.validoP1}"></td>
+                                            <td th:text="${ResumenGeneral.validoP1 + '%'}"></td>
 
                                         </tr>
-                                        <tr>
+                                        <tr th:each="ResumenGeneral : ${ResumenGeneralServicio}">
                                             <td><img width="40px" height="40px" src="images/keyko.jpg"
                                                     class="spaceimg"><img width="40px" height="40px"
                                                     src="images/simbolo_keyko.jpg" class="spaceimg">FUERZA POPULAR </td>
                                             <td th:text="${ResumenGeneral.p2}"></td>
-                                            <td th:text="${ResumenGeneral.validoP2}"></td>
+                                            <td th:text="${ResumenGeneral.validoP2 + '%'}"></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -131,19 +131,19 @@
                                         <th>TOTAL</th>
                                         <th>PORCENTAJE</th>
                                     </tr>
-                                    <tr>
+                                    <tr th:each="ResumenGeneral : ${ResumenGeneralServicio}">
                                         <td><span class="sangria0">TOTAL DE ACTAS</span></td>
-                                        <td>77,307</td>
+                                        <td th:text="${ResumenGeneral.totalActas}"></td>
                                         <td>100.000%</td>
                                     </tr>
-                                    <tr>
+                                    <tr th:each="ResumenGeneral : ${ResumenGeneralServicio}">
                                         <td><span class="sangria1">PROCESADAS</span></td>
-                                        <td>77,307</td>
+                                        <td th:text="${ResumenGeneral.totalProcesados}"></td>
                                         <td>100.000%</td>
                                     </tr>
-                                    <tr>
+                                    <tr th:each="ResumenGeneral : ${ResumenGeneralServicio}">
                                         <td><span class="sangria2">CONTABILIZADAS</span></td>
-                                        <td>77,307</td>
+                                        <td th:text="${ResumenGeneral.contabilizadas}"></td>
                                         <td>100.000%</td>
                                     </tr>
                                     <tr>
@@ -170,11 +170,11 @@
                                         <th>% DE PARTICIPACIÓN</th>
                                         <th>% DE AUSENTISMO</th>
                                     </tr>
-                                    <tr>
-                                        <td>22,901,954</td>
-                                        <td>18,342,896</td>
-                                        <td>80.093%</td>
-                                        <td>19.907%</td>
+                                    <tr th:each="ResumenGeneral : ${ResumenGeneralServicio}">
+                                        <td th:text="${ResumenGeneral.electoresHabiles}"></td>
+                                        <td th:text="${ResumenGeneral.totalVotantes}"></td>
+                                        <td th:text="${ResumenGeneral.participacion + '%'}"></td>
+                                        <td th:text="${ResumenGeneral.ausentismo + '%'}"></td>
                                     </tr>
                                 </table>
                             </div>
