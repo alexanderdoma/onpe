@@ -28,4 +28,10 @@ public class OnpeController {
 		modelo.addAttribute("GrupoVotacionServicio", servicio.buscarGrupoVotacionPorNumero(idGrupoVotacion));
 		return "response";
 	}
+	
+	@GetMapping("resumengeneral")
+	public String mostrarResumenGeneral(Model modelo) {
+		modelo.addAttribute("ResumenGeneralServicio", servicio.obtenerResumenGeneral());
+		return "resumengeneral";
+	}
 }

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import onpe.entidad.GrupoVotacion;
+import onpe.entidad.ResumenGeneral;
 import onpe.repositorio.IGrupoVotacionRepositorio;
 
 @Service
@@ -18,5 +19,10 @@ public class GrupoVotacionServicio implements IGrupoVotacionServicio{
 	@Transactional
 	public GrupoVotacion buscarGrupoVotacionPorNumero(String idGrupoVotacion) {
 		return repositorio.usp_getGrupoVotacion(idGrupoVotacion);
+	}
+	
+	@Override
+	public ResumenGeneral obtenerResumenGeneral(){
+		return repositorio.getResumenDomaJimenez();
 	}
 }
